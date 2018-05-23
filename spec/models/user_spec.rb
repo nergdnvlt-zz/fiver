@@ -13,14 +13,14 @@ describe User do
       create(:user, username: 'fluffy')
       user2 = User.new(name: 'fluffy', username: 'fluffy', email: 'fluffy@fluffy.com', password: 'test')
 
-      user2.should be_invalid
+      expect(user2).to be_invalid
     end
 
     it 'test for email' do
       create(:user, email: 'fluffy@fluffy.com')
       user2 = User.new(name: 'fluffy', username: 'fluffy', email: 'fluffy@fluffy.com', password: 'test')
 
-      user2.should_not be_valid
+      expect(user2).to be_invalid
     end
   end
 
