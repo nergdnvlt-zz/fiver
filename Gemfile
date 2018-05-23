@@ -43,7 +43,7 @@ group :development, :test do
   gem 'active_designer'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara'
-  gem 'factory_bot'
+  gem 'factory_bot_rails'
   gem 'launchy'
   gem 'pry'
   gem 'rspec-rails'
