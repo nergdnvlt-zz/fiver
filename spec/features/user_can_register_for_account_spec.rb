@@ -14,6 +14,6 @@ feature 'a user can create an account' do
 
     click_on 'Register'
 
-    expect(page).to have_content('Welcome Thor Odinson')
+    expect(page).to have_content('Welcome fatherwar')
   end
 end

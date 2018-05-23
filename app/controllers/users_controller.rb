@@ -6,8 +6,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      session[:user_id] = @user.id
       flash[:success] = "#{@user.username}'s account created!"
-      redirect_to user_path(@user)
+      redirect_to user_path(@user.slug)
     else
       flash[:error] = 'Account Not Created!'
       render :new
@@ -15,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(params[:slug])
+    @user = User.find_by(slug: params[:slug])
   end
 
   private

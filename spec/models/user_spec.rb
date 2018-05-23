@@ -13,7 +13,7 @@ describe User do
       create(:user, username: 'fluffy')
       user2 = User.new(name: 'fluffy', username: 'fluffy', email: 'fluffy@fluffy.com', password: 'test')
 
-      user2.should_not be_valid
+      user2.should be_invalid
     end
 
     it 'test for email' do
