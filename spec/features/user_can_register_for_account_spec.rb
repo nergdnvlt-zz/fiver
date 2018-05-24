@@ -6,14 +6,14 @@ feature 'a user can create an account' do
 
     click_on 'Register'
 
-    fill_in user[:full_name], with: 'Thor Odinson'
-    fill_in user[:username], with: 'fatherwar'
-    fill_in user[:email], with: 'test@test.com'
-    fill_in user[:password], with: 'test'
-    fill_in user[:password_confirmation], with: 'test'
+    fill_in 'Name', with: 'Thor Odinson'
+    fill_in 'Username', with: 'fatherwar'
+    fill_in 'Email', with: 'test@test.com'
+    fill_in 'Password', with: 'test'
+    fill_in 'Password confirmation', with: 'test'
 
-    click_on 'Create Account'
+    click_on 'Register'
 
-    expect(page).to have_content('Welcome Thor Odinson')
+    expect(page).to have_content('Welcome fatherwar')
   end
 end
