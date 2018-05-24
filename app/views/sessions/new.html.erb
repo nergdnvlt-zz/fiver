@@ -1,11 +1,30 @@
 <%= form_tag login_path class: 'form' do %>
 
-  <%= label_tag :username %>
-  <%= text_field_tag :username %>
+  <div class="row">
+    <div class="one-third column">&nbsp;</div>
+      <div class="one-third column">
+        <%= label_tag :username %>
+        <%= text_field_tag :username %>
+      </div>
+    <div class="one-third column">&nbsp;</div>
+  </div>
 
 
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
+  <div class="row">
+    <div class="one-third column">&nbsp;</div>
+      <div class="one-third column">
+        <%= label_tag :password %>
+        <%= password_field_tag :password %>
+      </div>
+    <div class="one-third column">&nbsp;</div>
+  </div>
 
-  <%= submit_tag 'Login' %>
+  <div class="row">
+    <div class="one-third column">&nbsp;</div>
+      <div class="one-third column">
+        <%= submit_tag 'Login', class: "button-primary"%>
+      </div>
+    <div class="one-third column">&nbsp;</div>
+  </div>
+
 <% end %>
