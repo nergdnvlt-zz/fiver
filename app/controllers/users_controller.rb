@@ -16,7 +16,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(slug: params[:slug])
+    @user = current_user
+    # @user = User.find_by(slug: params[:slug])
   end
 
   private
