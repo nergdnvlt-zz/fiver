@@ -18,6 +18,7 @@ feature 'An existing user' do
 
   scenario 'can log back out' do
     user1 = create(:user)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
     visit "/#{user1.slug}"
 
     click_on 'Log Out'
