@@ -1,0 +1,25 @@
+header.nav_bar {
+  width: 100%;
+  margin: auto;
+  background-color: #979AA1;
+  height: 75px;
+  a {
+    color: white;
+  }
+}
+
+nav.container {
+  width: 100%;
+  max-width: 1400px;
+}
+
+nav.row {
+  width: 100%;
+  height: 75px;
+  div.ten.columns, div.two.columns {
+    height: 75px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}

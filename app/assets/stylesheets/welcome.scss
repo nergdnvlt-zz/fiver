@@ -1,0 +1,29 @@
+div.welcome-index {
+  margin-top: 60px;
+  .row {
+    height: 300px;
+  }
+  .row.welcome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    border: 1px solid #888888;
+    border-radius: 25px;
+    margin-bottom: 10px;
+  }
+  .row.register {
+    height: 100px;
+  }
+  .columns.register {
+    height: 100px;
+  }
+}
+
+button.welcome {
+  background-color: #979AA1;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
