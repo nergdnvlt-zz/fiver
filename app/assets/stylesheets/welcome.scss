@@ -1,29 +1,34 @@
 div.welcome-index {
-  margin-top: 60px;
-  .row {
-    height: 300px;
-  }
-  .row.welcome {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 300px;
-    border: 1px solid #888888;
-    border-radius: 25px;
-    margin-bottom: 10px;
-  }
-  .row.register {
-    height: 100px;
-  }
-  .columns.register {
-    height: 100px;
-  }
+  margin-top: 100px;
 }
 
 button.welcome {
   background-color: #979AA1;
+  width: 155px;
   a {
     color: white;
     text-decoration: none;
   }
+}
+
+.register {
+  border: 1px solid #888888;
+  border-radius: 8px;
+  .register-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
+
+.oath-box, .login-box, .current-box {
+  border: 1px solid #888888;
+  border-radius: 8px;
+  height: 300px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
