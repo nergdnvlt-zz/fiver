@@ -12,25 +12,13 @@
 
   <% else %>
     <div class="row">
-          <div class="row welcome">
-
-            <div class="row">
-              <div class="three columns welcome">
-                <h6> Existing Account? Login Here: </h6>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="three columns welcome">
-                <button class="welcome">
-                  <a href="#">Google Auth</a>
-                </button>
-              </div>
-            </div>
-        </div>
+      <div class="six columns welcome">
+        <button class="welcome">
+          <a href="#">Google Auth</a>
+        </button>
+      </div>
 
         <div class="six columns welcome">
-          <h6> Existing Account? Login Here: </h6><br>
           <button class="welcome">
             <%= link_to 'Login', login_path %>
           </button>
