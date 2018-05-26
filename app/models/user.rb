@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  before_save :generate_slug
 
   validates_presence_of :name
   validates_presence_of :username
@@ -8,5 +9,9 @@ class User < ApplicationRecord
 
   def to_params
     slug
+  end
+
+  def generate_slug
+    self.slug = username.parameterize
   end
 end
