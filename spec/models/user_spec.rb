@@ -22,4 +22,12 @@ describe User do
       expect(user2).to be_invalid
     end
   end
+
+  describe 'sets slug properly' do
+    it 'sets the slug from username' do
+      user = create(:native_user)
+
+      expect(user.slug).to eq(user.username.parameterize)
+    end
+  end
 end
