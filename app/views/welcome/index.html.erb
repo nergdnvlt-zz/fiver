@@ -1,9 +1,9 @@
 <div class='welcome-index'>
 
   <div class="row">
-  <% if session[:user_id] %>
+    <% if session[:user_id] %>
 
-    <!-- Current User -->
+      <!-- Current User -->
       <div class="twelve columns current-box">
         <div class="box-title">
           <h6>Please Link to your dashboard:</h6>
@@ -13,48 +13,51 @@
         </button>
       </div>
 
-  <% else %>
+    <% else %>
 
-    <!-- Flex container for current_users -->
-    <div class="row">
+      <!-- Flex container for current_users -->
+      <div class="row">
 
-      <!-- Oauth Box -->
+        <!-- Oauth Box -->
         <div class="six columns oath-box">
           <div class="box-title">
             <h6>Login with another service:</h6>
           </div>
-          <button class="welcome">
+          <button class="welcome google-welcome">
             <%= link_to 'Google', google_login_path %>
           </button>
         </div>
 
-
-      <!-- Login Box -->
+        <!-- Login Box -->
         <div class="six columns login-box">
           <div class="box-title">
-            <h6> Already have an account? Login here: </h6>
+            <h6>
+              Already have an account? Login here:
+            </h6>
           </div>
           <button class="welcome welcome-login">
             <%= link_to 'Login', login_path %>
           </button>
         </div>
-    </div>
-
-    <!-- Registration box -->
-    <div class="row register">
-      <div class="row">
-          <div class="twelve columns register-inner">
-            <h6> Create an account here: </h6>
-          </div>
       </div>
 
-      <div class="row">
-        <div class="twelve columns register-inner">
-          <button class="welcome welcome-register">
-            <%= link_to 'Register', new_user_path %>
-          </button>
+      <!-- Registration box -->
+      <div class="row register">
+        <div class="row">
+          <div class="twelve columns register-inner">
+            <h6>
+              Create an account here:
+            </h6>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="twelve columns register-inner">
+            <button class="welcome welcome-register">
+              <%= link_to 'Register', new_user_path %>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
   </div>

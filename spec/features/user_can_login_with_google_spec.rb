@@ -1,17 +1,17 @@
-# require 'rails_helper'
-# require './spec/support/omniauth'
-#
-# describe 'root path visitation' do
-#   scenario 'logging in' do
-#     VCR.use_cassette('features/user_can_login_with_github') do
-#       visit '/'
-#
-#       expect(page.status_code).to eq(200)
-#
-#       click_on "Google"
-#
-#       expect(current_path).to eq(root_path)
-#       expect(page).to have_content('Tyler')
-#     end
-#   end
-# end
+require 'rails_helper'
+require './spec/support/omniauth'
+
+describe 'root path visitation' do
+  scenario 'logging in' do
+    VCR.use_cassette('features/user_can_login_with_google') do
+      visit '/'
+
+      within('.google-welcome') do
+        click_on 'Google'
+      end
+
+      expect(current_path).to eq('/tyler-lundgren')
+      expect(page).to have_content('tyler-lundgren')
+    end
+  end
+end
