@@ -8,9 +8,11 @@ feature 'User selects currency' do
     # When I visit a userpage
     visit "/#{user.slug}"
 
+    # Select a currency from the dropdown
     select 'Bitcoin', from: 'currency[id]'
     click_on 'Get Tweets!'
 
+    # Expect to see 10 tweets on a page
     expect(current_path).to eq(tweets_path)
     expect(page).to have_css('.tweet', count: 10)
   end
