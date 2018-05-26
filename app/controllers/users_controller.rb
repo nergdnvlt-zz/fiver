@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   def new
-    @user = User.new
+    @user = NativeUser.new
   end
 
   def create
-    @user = User.new(user_params)
+    @user = NativeUser.new(user_params)
     if @user.save
       session[:user_id] = @user.id
       flash[:success] = "#{@user.username}'s account created!"
@@ -17,13 +17,12 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    # @user = User.find_by(slug: params[:slug])
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:name,
+    params.require(:native_user).permit(:name,
                                  :username,
                                  :email,
                                  :password,

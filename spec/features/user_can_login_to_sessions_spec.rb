@@ -2,10 +2,12 @@ require 'rails_helper'
 
 feature 'An existing user' do
   scenario 'can login' do
-    user1 = create(:user)
+    user1 = create(:native_user)
     visit '/'
 
-    click_on 'Login'
+    within('.welcome-login') do
+      click_on 'Login'
+    end
 
     fill_in 'Username', with: user1.username
     fill_in 'Password', with: user1.password
@@ -17,7 +19,7 @@ feature 'An existing user' do
   end
 
   scenario 'can log back out' do
-    user1 = create(:user)
+    user1 = create(:native_user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
     visit "/#{user1.slug}"
 
