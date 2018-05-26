@@ -1,5 +1,17 @@
 <div class="row">
   <div class="twelve columns">
-    <h1>Welcome <%= @user.username %></h1>
+    <h1>Welcome
+      <%= @user.username %></h1>
   </div>
+</dv>
+
+<div class="row"></div>
+<div class="twelve columns">
+  <%= form_tag :tweet, method: :get, class: "form-inline" do %>
+  <div class="form-group search-field">
+    <%= label_tag :crypto %><br/>
+    <%= collection_select :id, Crypto.order(:name), :id, :name %>
+    <%= submit_tag "Go Get Tweets", class: "btn btn-primary" %>
+  </div>
+<% end %>
 </div>
