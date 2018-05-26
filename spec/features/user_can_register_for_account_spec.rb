@@ -4,7 +4,9 @@ feature 'a user can create an account' do
   scenario 'with entering their personal info' do
     visit '/'
 
-    click_on 'Register'
+    within('.welcome-register') do
+      click_on 'Register'
+    end
 
     fill_in 'Name', with: 'Thor Odinson'
     fill_in 'Username', with: 'fatherwar'

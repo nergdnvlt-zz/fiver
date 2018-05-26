@@ -27,3 +27,6 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore omniauth file
+/spec/support/omniauth.rb
