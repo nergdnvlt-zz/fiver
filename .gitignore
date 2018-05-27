@@ -30,3 +30,4 @@
 
 # Ignore omniauth file
 /spec/support/omniauth.rb
+/config/initializers/twitter.rb
