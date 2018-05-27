@@ -7,6 +7,5 @@ rvm:
   - 2.4.1
 script:
   - bundle install
-  - bundle exec rake db:migrate
   - bundle exec rake db:seed
   - bundle exec rspec
