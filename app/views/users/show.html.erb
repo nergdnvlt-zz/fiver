@@ -8,7 +8,7 @@
 <div class="row"></div>
 <div class="twelve columns">
   <%= form_tag :tweets, method: :get, class: "form-inline" do %>
-  <div>
+  <div class='crypto-dropdown'>
     <%= label_tag :crypto %><br/>
     <%= select_tag 'crypto_id', options_for_select(Crypto.all.collect{ |u| [u.name, u.id] }) %>
     <%= submit_tag "Go Get Tweets", class: "btn btn-primary" %>
