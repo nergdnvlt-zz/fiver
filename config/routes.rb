@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
   resources :native_users, controller: 'users', type: 'NativeUser'
   resources :tweets, only: %i[show]
-  
+
   get '/tweets', to: 'tweets#index'
 
 

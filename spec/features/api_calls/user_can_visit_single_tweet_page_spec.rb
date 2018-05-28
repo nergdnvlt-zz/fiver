@@ -17,9 +17,9 @@ feature 'User selects currency' do
         find('h6').click
       end
 
-      expect(current_path).to eq(tweet_path)
       expect(page).to have_css('.tone-name')
-      expect(page).to have_css('.tone-score')
+      expect(page).to have_content('Tweet')
+      expect(page).to have_content('Tones')
     end
   end
 end
