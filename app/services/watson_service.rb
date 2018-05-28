@@ -39,7 +39,7 @@ class WatsonService
   end
 
   def analysis_service
-    @analysis ||= JSON.parse(post_to_watson.body, symbolize_names: true)
+    @analysis_service ||= JSON.parse(post_to_watson.body, symbolize_names: true)
   end
 
   def new_document_analysis
