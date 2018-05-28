@@ -1,0 +1,154 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://gateway.watsonplatform.net/tone-analyzer/api//v3/tone?version=2017-09-21
+    body:
+      encoding: UTF-8
+      string: This is absolutely amazing!!! This is utterly intoxicating. What are
+        we gonna do? Oh no. Bob said sally likes peanut butter.
+    headers:
+      Authorization:
+      - Basic MGIwYTZmNTYtNjI3NS00YWY4LWI1YzYtNGE2NTc5NDY0MTM3Om5iRVBWQ2pBUzZ3aQ==
+      User-Agent:
+      - Faraday v0.15.2
+      Content-Type:
+      - text/plain;charset=utf-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Backside-Transport:
+      - OK OK
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Content-Type-Options:
+      - nosniff
+      Pragma:
+      - no-cache
+      X-Service-Api-Version:
+      - 3.5.3; 2017-09-21
+      Cache-Control:
+      - no-store
+      X-Service-Build-Number:
+      - '2018-05-14T05:02:51'
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Language:
+      - en-US
+      X-Powered-By:
+      - Servlet/3.1
+      Content-Type:
+      - application/json
+      Server:
+      - "-"
+      X-Dp-Transit-Id:
+      - gateway02-1111383981
+      X-Global-Transaction-Id:
+      - ffea405d5b0c63bd423e5fad
+      Strict-Transport-Security:
+      - max-age=31536000;
+      X-Dp-Watson-Tran-Id:
+      - gateway02-1111383981
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Mon, 28 May 2018 20:17:01 GMT
+      Content-Length:
+      - '627'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - Watson-DPAT=GGrPkcMrVuYwDvcrllMNISChMi4bcFBRME%2BBE95xSMMeRxWmKUY4qX7JLC4nP1UloA9MsD%2B8MQpOXvTEwZH34PcJCzsk3EdtUL9o7NE4jfYAySABwtdo7eexXmw1FED0LurfOOXo9iZTIcZ97aKaxZlSNKogKVo%2Fs9pVusaTHeaUvARGZEzjLjAA1cEMPW7%2BpoF0f1Dk5U8ACLCEs5tdnL7HEFp%2FyzoCQ1RPXXx3Q%2BYmASb62ngUvxhhQi7zrA83sxZBvnU%2BUIY8Kh69rOjrLMqe%2BsE9YwF5OkFDxN4tOO0CZvJa9lVlup96Kz%2BOZnlhauDleDfY8yLK5ib2wNo1OLmRFstCVMC%2BtE1N%2Fl9cGPNTZjTJ8ERwcTj%2FNEFBWkP55qWSuy3l%2B42%2BrK0djTpwl8D3wVN2xv%2B8JUVe%2F74Makd9uY31uPT5hyfbwbEYRwzggygZZyQMDXa2Nl5quCcOpa26ZUln7ZxTYgkiOXcECFLUeWuhNlyzCG3SYj0AIU5PExMS%2Bb0EQPSY4wjO8LnfLvDq6qhCPPikNWmwbIU4ymxGJacRKr%2BEAmn16DfTfS8yFoevft6DxJI%2BZUV%2B7GttpG%2FC78r%2B%2FpRg508fuT4WAwLIsgKNmWh7IGhDaosKv%2BOghKWIKW0%2BJesNBiJrEi7FOVKVlACyj45MN4LZ1dPfPezT3nvkgxoA5pOCOT03OB7%2F19MZFy3fN%2Bn3O1atOPCSXJIB2KV7mfZEsv1vRVEzyuRToFsxSm5sj%2BSYbhUxoS79qxW8cy179ppdcgjnfkZV1BXlv5ahHzlF5O5u6uI52cs%2FQsypUYWFdxXlYgCRi4tvcqcBdWrIdcmP0Ih%2FeIadbVzRdWQcWcUHRDGY5%2FWyOzaaGMRpabtF4ogGPDhHM8zd9p%2B32ei%2FPYef%2B%2FLBmyP3lYNr%2FmLdTNr1jj4i4mT%2Ffl3qyZ4DyBmiGq0bHp%2FsUHxT;
+        path=/tone-analyzer/api; secure; HttpOnly
+    body:
+      encoding: UTF-8
+      string: '{"document_tone":{"tones":[{"score":0.710116,"tone_id":"joy","tone_name":"Joy"},{"score":0.962182,"tone_id":"confident","tone_name":"Confident"}]},"sentences_tone":[{"sentence_id":0,"text":"This
+        is absolutely amazing!!!","tones":[{"score":0.899924,"tone_id":"joy","tone_name":"Joy"},{"score":0.762356,"tone_id":"analytical","tone_name":"Analytical"},{"score":0.992572,"tone_id":"confident","tone_name":"Confident"}]},{"sentence_id":1,"text":"This
+        is utterly intoxicating.","tones":[]},{"sentence_id":2,"text":"What are we
+        gonna do?","tones":[]},{"sentence_id":3,"text":"Oh no. Bob said sally likes
+        peanut butter.","tones":[]}]}'
+    http_version: 
+  recorded_at: Mon, 28 May 2018 20:17:01 GMT
+- request:
+    method: post
+    uri: https://gateway.watsonplatform.net/tone-analyzer/api//v3/tone?version=2017-09-21
+    body:
+      encoding: UTF-8
+      string: '[#<Tweet id: 1, text: "This is absolutely amazing!!!", score: "0.899924",
+        tone_id: "joy", tone_name: "Joy", created_at: "2018-05-28 20:17:01", updated_at:
+        "2018-05-28 20:17:01">]'
+    headers:
+      Authorization:
+      - Basic MGIwYTZmNTYtNjI3NS00YWY4LWI1YzYtNGE2NTc5NDY0MTM3Om5iRVBWQ2pBUzZ3aQ==
+      User-Agent:
+      - Faraday v0.15.2
+      Content-Type:
+      - text/plain;charset=utf-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Backside-Transport:
+      - OK OK
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Content-Type-Options:
+      - nosniff
+      Pragma:
+      - no-cache
+      X-Service-Api-Version:
+      - 3.5.3; 2017-09-21
+      Cache-Control:
+      - no-store
+      X-Service-Build-Number:
+      - '2018-05-14T05:02:51'
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Language:
+      - en-US
+      X-Powered-By:
+      - Servlet/3.1
+      Content-Type:
+      - application/json
+      Server:
+      - "-"
+      X-Dp-Transit-Id:
+      - gateway02-1111385389
+      X-Global-Transaction-Id:
+      - ffea405d5b0c63bd423e652d
+      Strict-Transport-Security:
+      - max-age=31536000;
+      X-Dp-Watson-Tran-Id:
+      - gateway02-1111385389
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Mon, 28 May 2018 20:17:02 GMT
+      Content-Length:
+      - '147'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - Watson-DPAT=AlvqaGo9MAxQV9kqB5%2ByISNoa2UJw4U4oeVcq6%2F%2Bs81swp1JDsna75SF23slSjwYLW5yQCMNFTkX9OplMqt9oey9YxTzbUy%2BXYoRaarZmbEpyUslSGkYwokMYrhCNqOwx9ZJs4SEHA%2FrLM7TuaH7HtuMSvOLmFivi2aH4t3XB0AmNV%2BYTVBJpE9C%2FQVPXqVsGdBxsYTMB7Vh3v5p47c%2Frl8oD6xonsdG8osRDq8PnqxJ9EWEpgp%2FeV7ai86HKwv4agAKDmzgxXmyf3KN7DtJjOHAGWBTnn4eZl5LbfJbcU5QpqrEIJWnAPRByQWH8b1xe3RWNXFfzGNB6gR2KrX8Z43Gsx3COTup2irCCRbcw3m9H%2BqSoy6QttC98Wyk6A4CgsgiSK7FD7FILOdQ77pxzt7znwZO9LOwcyJGPm5rQfycY%2F9CTdU9z60leTJyITo5jdHsnsfV1zChkKljY6NAEMvqb18fZSmZrXPevTJWQaIch6d%2FaJaltDkfphf7DP%2B8ZSDc98Us81ISk3ROybXE2VzRLHz1zayW4IJDUXhpN0UUmX%2BrFRR3nHHS7Jx2VgWu9kXux4Th9uWee9%2BnAE%2FRWhWmBtxyZbQymcVvSEd1wrWRNH472MydebAwq%2FgOe34zaMwcREIT4jjB0o9ZoMtN9IPvZ%2FebZR6Plj%2FjLzZttVEw24KjZJDlS8ixWOFElnn47WW%2FRGuNxttazfSq6PpQzLqii48YE6X%2FkBoK%2FaGYRTwBjKhc%2FbS%2FX53OdPejI6C%2Bs3ySQ0irIg5ZOrcfLhXR3%2FbUzqCb9bohafQXtO3xk%2BL9R%2FUcmGY%2FIrEBeARWtl%2FcKQAez0QXqYFzEtbQ1DTo40gl3fz0vWbVRnaV8hQ8jLpvIVaMcxPDrkjG5ispO6%2FP%2BKrFXZVfYGYSs6DoMb6zDnT%2B0KUu%2BKhdkkj4g8HBKJzy2Q2WMKoK8iQMGvnGzgs3;
+        path=/tone-analyzer/api; secure; HttpOnly
+    body:
+      encoding: UTF-8
+      string: '{"document_tone":{"tones":[{"score":0.597903,"tone_id":"joy","tone_name":"Joy"},{"score":0.718823,"tone_id":"confident","tone_name":"Confident"}]}}'
+    http_version: 
+  recorded_at: Mon, 28 May 2018 20:17:02 GMT
+recorded_with: VCR 4.0.0
