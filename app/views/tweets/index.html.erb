@@ -1,25 +1,37 @@
-<div class="row">
+<div class="row main-tweet-page">
 
   <div class="six columns tweet-page">
+    <div class="twelve columns title">
+      <h2>Tweets</h2>
+    </div>
 
-    <% @analyzer.tweets.each do |tweet| %>
-      <div class="ten columns tweet">
-        <h6><%= link_to tweet.text, "/tweets/#{tweet.id}" %></h6>
-      </div>
-    <% end %>
-
+    <div class="ten columns">
+      <% @analyzer.tweets.each do |tweet| %>
+        <div class="twelve columns tweet">
+          <h6><%= link_to tweet.text, "/tweets/#{tweet.id}" %></h6>
+        </div>
+      <% end %>
+    </div>
   </div>
 
   <div class="six columns tweet-page">
+    <h2>Tones</h2>
 
-    <% @analyzer.document_tones.each do |document_tone| %>
-      <div class="ten columns tone-name">
-        <%= document_tone.score %>
+    <% if @analyzer.document_tones.empty? %>
+
+      <div class="ten columns tweet">
+        <h4>No tone analyzed in sample, try again.</h4>
       </div>
 
-      <div class="ten columns tone-score">
-        <%= document_tone.name %>
-      </div>
+    <% else %>
+
+      <% @analyzer.document_tones.each do |document_tone| %>
+        <div class="ten columns tone-name">
+          <ul>
+            <li><%= document_tone.name %></li>
+          </ul>
+        </div>
+      <% end %>
     <% end %>
 
   </div>
