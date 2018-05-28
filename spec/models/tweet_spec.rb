@@ -1,18 +1,10 @@
-require 'spec_helper'
-require './app/models/tweet'
+require 'rails_helper'
 
 describe Tweet do
-  it 'initializes with text as attribute' do
-    text = 'Best tweet ever'
-
-    tweet = Tweet.new(text)
-    expect(tweet.text).to eq(text)
-  end
-
-  it 'initializes with other text as attribute' do
-    text = 'Not the best tweet ever'
-
-    tweet = Tweet.new(text)
-    expect(tweet.text).to eq(text)
+  describe 'validations' do
+    it { should validate_presence_of :text }
+    it { should validate_presence_of :score }
+    it { should validate_presence_of :tone_id }
+    it { should validate_presence_of :tone_name }
   end
 end
