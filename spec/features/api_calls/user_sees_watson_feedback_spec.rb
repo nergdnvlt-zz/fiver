@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'User selects currency' do
   scenario 'and sees tweets associated with that currency' do
-    VCR.use_cassette('/features/user_selects_currency_and_sees_tweets') do
+    VCR.use_cassette('/features/user_sees_watson_feed_back') do
       Crypto.create!(name: 'Bitcoin', symbol: 'BTC')
       Crypto.create!(name: 'Ethereum', symbol: 'ETH')
       user = create(:user)
@@ -16,7 +16,8 @@ feature 'User selects currency' do
 
       # Expect to see 10 tweets on a page
       expect(current_path).to eq(tweets_path)
-      expect(page).to have_css('.tweet', count: 10)
+      expect(page).to have_css('.tone-name')
+      expect(page).to have_css('.tone-score')
     end
   end
 end

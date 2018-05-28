@@ -1,0 +1,15 @@
+.tweet-page, .tweet {
+  border: 1px solid #888888;
+  border-radius: 8px;
+}
+
+.tweet-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tweet {
+  margin-top: 3px;
+}

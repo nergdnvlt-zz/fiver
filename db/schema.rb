@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_26_214845) do
+ActiveRecord::Schema.define(version: 2018_05_28_171011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 2018_05_26_214845) do
   create_table "cryptos", force: :cascade do |t|
     t.string "name"
     t.string "symbol"
+  end
+
+  create_table "tweets", force: :cascade do |t|
+    t.string "text"
+    t.string "score"
+    t.string "tone_id"
+    t.string "tone_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

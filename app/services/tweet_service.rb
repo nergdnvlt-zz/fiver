@@ -1,11 +1,11 @@
 class TweetService
   def initialize(crypto)
-    @crypto = crypto
+    @crypto = crypto.downcase
   end
 
   def return_tweets
-    client.search("#{@crypto_name} -rt", result_type: "recent", lang: "en").take(10).map do |api_tweet|
-      Tweet.new(api_tweet.text)
+    client.search("#{@crypto} -rt", result_type: "recent", lang: "en").take(20).map do |api_tweet|
+      RawTweet.new(api_tweet.text)
     end
   end
 
