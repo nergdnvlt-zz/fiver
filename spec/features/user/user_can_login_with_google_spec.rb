@@ -10,8 +10,8 @@ describe 'root path visitation' do
         click_on 'Google'
       end
 
-      expect(current_path).to eq('/tyler-lundgren')
-      expect(page).to have_content('tyler-lundgren')
+      expect(current_path).to eq('/thor-odinson')
+      expect(page).to have_content('thor-odinson')
     end
   end
 end
