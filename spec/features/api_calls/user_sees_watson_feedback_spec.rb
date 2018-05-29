@@ -17,7 +17,6 @@ feature 'User selects currency' do
       # Expect to see 10 tweets on a page
       expect(current_path).to eq(tweets_path)
       expect(page).to have_css('.tone-name')
-      expect(page).to have_css('.tone-score')
     end
   end
 end
