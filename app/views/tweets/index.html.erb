@@ -16,24 +16,6 @@
 
   <div class="six columns tweet-page">
     <h2>Tones</h2>
-
-    <% if @analyzer.document_tones.empty? %>
-
-      <div class="ten columns tweet">
-        <h4>No tone analyzed in sample, try again.</h4>
-      </div>
-
-    <% else %>
-
-      <% @analyzer.document_tones.each do |document_tone| %>
-        <div class="ten columns tone-name">
-          <ul>
-            <li><%= document_tone.name %></li>
-          </ul>
-        </div>
-      <% end %>
-    <% end %>
-
   </div>
 
 </div>
