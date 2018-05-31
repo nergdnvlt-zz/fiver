@@ -16,6 +16,8 @@ feature 'User selects currency' do
 
       # Expect to see 10 tweets on a page
       expect(current_path).to eq(tweets_path)
+
+      click_on 'Get Watson Data'
       expect(page).to have_css('.tone-name')
     end
   end

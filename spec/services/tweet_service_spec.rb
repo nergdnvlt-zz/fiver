@@ -6,9 +6,9 @@ describe TweetService do
       crypto = 'Bitcoin'
 
       @tweets = TweetService.new(crypto).return_tweets
-      expect(@tweets.size).to eq(20)
-      expect(@tweets[0]).to be_a RawTweet
-      expect(@tweets[-1]).to be_a RawTweet
+
+      expect(@tweets).to be_a String
+      expect(@tweets).to include('bitcoin')
     end
   end
 end

@@ -6,16 +6,14 @@ class AnalyzerPresenter
   end
 
   def tweets
-    @tweets ||= WatsonService.new(join_raw_tweets).analyzed_tweets
+    @tweets ||= WatsonService.new(@raw_tweets).analyzed_tweets[0..4]
   end
 
-  def document_tones
-    @document_tones ||= WatsonService.new(join_raw_tweets).document_tones
+  def joined_tweets
+    tweets.map(&:text).join
   end
 
-  private
-
-  def join_raw_tweets
-    @raw_tweets.map(&:text).join
-  end
+  # def document_tones
+  #   @document_tones ||= WatsonService.new(join_raw_tweets).document_tones
+  # end
 end
