@@ -1,7 +1,7 @@
-class RawTweet
-  attr_reader :text
-
-  def initialize(text)
-    @text = text
-  end
-end
+# class RawTweet
+#   attr_reader :text
+#
+#   def initialize(text)
+#     @text = text
+#   end
+# end
