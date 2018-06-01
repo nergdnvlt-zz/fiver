@@ -16,10 +16,13 @@
 
   <div class="six columns tweet-page">
     <h2>Tones</h2>
-    <button type="button" name="button" class="watson_button">Get Watson Data</button>
+    <button type="button" class="get_watson_button">Get Watson Data</button>
+    <%= content_tag "div", id: "tweets", data: {tweets: @document_text} do %>
+    <% end %>
     <div style="display:none;" id="partial">
 
     </div>
   </div>
 
 </div>
+<%= javascript_include_tag 'tweets' %>

@@ -6,7 +6,7 @@ class AnalyzerPresenter
   end
 
   def tweets
-    @tweets ||= WatsonService.new(@raw_tweets).analyzed_tweets[0..4]
+    @tweets ||= WatsonService.new(@raw_tweets).analyzed_tweets[0..9]
   end
 
   def joined_tweets

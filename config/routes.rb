@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   resources :native_users, controller: 'users', type: 'NativeUser'
   resources :tweets, only: %i[show]
 
+  namespace :api do
+    namespace :v1 do
+      get '/watson', to: 'watson#show'
+    end
+  end
+
   get '/tweets', to: 'tweets#index'
 
   get '/login', to: 'sessions#new', as: 'login'
@@ -15,4 +21,5 @@ Rails.application.routes.draw do
   get '/auth/google_oauth2/callback', to: 'sessions#create'
 
   get '/:slug', to: 'users#show', as: 'user'
+
 end

@@ -20,6 +20,10 @@ class WatsonService
   #   end
   # end
 
+  def analysis_service
+    @analysis_service ||= JSON.parse(post_to_watson.body, symbolize_names: true)
+  end
+
   private
 
   def conn
@@ -37,10 +41,6 @@ class WatsonService
       req.headers['Content-Type'] = 'text/plain;charset=utf-8'
       req.body = "#{tweets}"
     end
-  end
-
-  def analysis_service
-    @analysis_service ||= JSON.parse(post_to_watson.body, symbolize_names: true)
   end
 
   # def new_document_analysis
