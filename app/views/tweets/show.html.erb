@@ -17,7 +17,11 @@
     </div>
 
     <div class="ten columns tone-name">
-      <%= @tweet.tone_name %>
+      <ul>
+      <% @tweet.tones.each do |tone| %>
+        <li><%= tone.tone_name %></li>
+      <% end %>
+    </ul>
     </div>
 
   </div>

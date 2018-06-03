@@ -4,7 +4,10 @@ feature 'User selects currency' do
   scenario 'and sees tweets associated with that currency' do
     VCR.use_cassette('/features/user_sees_single_feed_back') do
       Crypto.create!(name: 'Bitcoin', symbol: 'BTC')
-      tweet = Tweet.create!(text: 'bitcoin ftw', score: "0.888", tone_id: 'joy', tone_name: "Joy")
+      tone = Tone.create!(tone_name: 'Joy', url: 'https://i.imgur.com/s9HLKk5.png')
+      tweet = Tweet.create!(text: 'bitcoin ftw')
+      TweetTone.create!(tweet: tweet, tone: tone)
+
       user = create(:user)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
