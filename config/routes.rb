@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      get '/watson', to: 'watson#show'
+      post '/watson', to: 'watson#create'
     end
   end
 

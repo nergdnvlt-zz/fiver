@@ -1,3 +1,5 @@
+<%= content_tag "div", id: "tweets", data: {tweets: @document_text} do %>
+<% end %>
 <div class="row main-tweet-page">
 
   <div class="six columns tweet-page">
@@ -16,14 +18,15 @@
 
   <div class="six columns tweet-page">
     <div class="title">
-      <h2>Tones</h2>
+      <h2>Overall Tones</h2>
     </div>
-    <button type="button" class="get_watson_button">Watson Data</button>
-    <%= content_tag "div", id: "tweets", data: {tweets: @document_text} do %>
-    <% end %>
-    <div style="display:none;" id="partial">
 
+    <div>
+      <ul id="watson_partial">
+      </ul>
     </div>
+
+    <button type="button" class="get_watson_button">Watson Data</button>
   </div>
 
 </div>

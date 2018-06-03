@@ -1,6 +1,9 @@
 class Api::V1::WatsonController < ApplicationController
-  def show
-    document_tone = WatsonService.new(params[:text]).analysis_service
+  skip_before_action :verify_authenticity_token
+
+  def create
+    body = request.body.string
+    document_tone = WatsonService.new(body).analysis_service
     document = Document.new(document_tone)
     render json: document.as_json
   end
@@ -15,7 +18,7 @@ class Document
 
   def make_tones
     @attrs[:document_tone][:tones].map do |tone|
-      tone[:tone_name]
+      { tone_name: tone[:tone_name] }
     end
   end
 
