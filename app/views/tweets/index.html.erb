@@ -5,18 +5,20 @@
       <h2>Tweets</h2>
     </div>
 
-    <div class="ten columns">
+    <div class="ten columns tweet-box">
       <% @analyzer.tweets.each do |tweet| %>
         <div class="twelve columns tweet">
-          <h6><%= link_to tweet.text, "/tweets/#{tweet.id}" %></h6>
+          <%= link_to tweet.text, "/tweets/#{tweet.id}" %>
         </div>
       <% end %>
     </div>
   </div>
 
   <div class="six columns tweet-page">
-    <h2>Tones</h2>
-    <button type="button" class="get_watson_button">Get Watson Data</button>
+    <div class="title">
+      <h2>Tones</h2>
+    </div>
+    <button type="button" class="get_watson_button">Watson Data</button>
     <%= content_tag "div", id: "tweets", data: {tweets: @document_text} do %>
     <% end %>
     <div style="display:none;" id="partial">

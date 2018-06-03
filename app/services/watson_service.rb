@@ -4,7 +4,7 @@ class WatsonService
   end
 
   def analyzed_tweets
-    analysis_service[:sentences_tone].map do |sentence|
+    tweets = analysis_service[:sentences_tone].map do |sentence|
       next if sentence[:tones].empty?
       next if sentence[:tones][0][:tone_name] == 'Analytical'
       Tweet.create({ text: sentence[:text],
@@ -12,6 +12,11 @@ class WatsonService
                      tone_id: sentence[:tones][0][:tone_id],
                      tone_name: sentence[:tones][0][:tone_name] })
     end.compact
+    tweets.each do |tweet|
+      tone = Tone.find_by(tone_name: tweet.tone_name)
+      tweet.tweet_tones.create(tone: tone)
+    end
+    tweets
   end
 
   # def document_tones

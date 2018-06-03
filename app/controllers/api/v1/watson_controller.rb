@@ -2,11 +2,8 @@ class Api::V1::WatsonController < ApplicationController
   def show
     document_tone = WatsonService.new(params[:text]).analysis_service
     document = Document.new(document_tone)
-    binding.pry
     render json: document.as_json
   end
-
-
 end
 
 class Document

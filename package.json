@@ -1,5 +1,7 @@
 {
   "name": "fiver",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "base64-js": "^1.3.0"
+  }
 }
