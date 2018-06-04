@@ -19,6 +19,7 @@ class Document
   def make_tones
     @attrs[:document_tone][:tones].map do |tone|
       { tone_name: tone[:tone_name] }
+        # , tone_url: Tone.find_by(tone_name: tone[:tone_name]).url }
     end
   end
 
