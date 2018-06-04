@@ -10,8 +10,8 @@ $('.get_watson_button').on('click', function() {
     .then(function(tones){ tones.tones.forEach(
       tone => {
         $(`#watson_partial`).append(`<li class="tone-name">${tone.tone_name}</li>`); }); });
+        // $(`#watson_partial`).append(`<li class="tone-name">${tone.tone_name} ${<%= image_tag ${tone.url}, class: 'tone-icon' %>}</li>`); }); });
 });
 
 
 // tones.tones.forEach(tone => {console.log(tone.tone_name)})
-// <%=j image_tag Tone.find_by(tone_name: ${tone.tone_name}).url %>`)

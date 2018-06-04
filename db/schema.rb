@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2018_06_03_164312) do
   create_table "tones", force: :cascade do |t|
     t.string "tone_name"
     t.string "url"
+    t.index ["tone_name"], name: "index_tones_on_tone_name"
   end
 
   create_table "tweet_tones", force: :cascade do |t|

@@ -18,3 +18,5 @@ Tone.create!(tone_name: 'Fear', url: 'https://i.imgur.com/PiE5a9Y.png')
 Tone.create!(tone_name: 'Joy', url: 'https://i.imgur.com/s9HLKk5.png')
 Tone.create!(tone_name: 'Sadness', url: 'https://i.imgur.com/C8UTNDy.png')
 Tone.create!(tone_name: 'Tentative', url: 'https://i.imgur.com/VfWUeLz.png')
+
+NativeUser.create!(name: 'Thrasher', username: 'fatherwar', email: 'fatherwar@test.io', password_digest: 'test')
