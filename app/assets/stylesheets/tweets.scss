@@ -10,6 +10,7 @@
   align-items: center;
   margin-top: 100px;
   background-color: white;
+  height: 250px;
   a {
     color: black;
   }
@@ -17,7 +18,7 @@
 
 .tweet {
   margin-top: 4px;
-  margin-bottom: 4px;
+  margin-bottom: 25px;
   margin-left: 0px;
   display: flex;
   align-items: center;
@@ -48,4 +49,18 @@
 
 .tweet-box, .get_watson_button {
   margin-bottom: 30px;
+}
+
+.tone-list {
+  margin-bottom: 25px;
+}
+
+.tone-icon {
+  width: 20px;
+  height: 15px;
+}
+
+.text {
+  margin-top: 3px;
+  margin-left: 3px;
 }
