@@ -2,8 +2,7 @@ class Api::V1::WatsonController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def create
-    body = request.body.string
-    document_tone = WatsonService.new(body).analysis_service
+    document_tone = WatsonService.new(request.body.string).analysis_service
     document = Document.new(document_tone)
     render json: document.as_json
   end
@@ -19,9 +18,15 @@ class Document
   def make_tones
     @attrs[:document_tone][:tones].map do |tone|
       { tone_name: tone[:tone_name] }
-        # , tone_url: Tone.find_by(tone_name: tone[:tone_name]).url }
     end
   end
+
+  # def make_tones
+  #   @attrs[:document_tone][:tones].map do |tone|
+  #     db_tone = Tone.find_by(tone_name: tone[:tone_name])
+  #     { tone_name: db_tone.tone_name, tone_url: db_tone.url }
+  #   end
+  # end
 
   def as_json
     {
