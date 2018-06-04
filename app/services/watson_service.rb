@@ -4,19 +4,18 @@ class WatsonService
   end
 
   def analyzed_tweets
-    analysis_service[:sentences_tone].map do |sentence|
+    tweets = analysis_service[:sentences_tone].map do |sentence|
       next if sentence[:tones].empty?
-      Tweet.create({ text: sentence[:text],
-                     score: sentence[:tones][0][:score],
-                     tone_id: sentence[:tones][0][:tone_id],
-                     tone_name: sentence[:tones][0][:tone_name] })
+      next if sentence[:tones][0][:tone_name] == 'Analytical'
+      tone = Tone.find_by(tone_name: sentence[:tones][0][:tone_name])
+      tweet = Tweet.create({ text: sentence[:text] })
+      tweet.tweet_tones.create(tone: tone)
+      tweet
     end.compact
   end
 
-  def document_tones
-    @document_tones = new_document_analysis[:document_tone][:tones].map do |tone|
-      Tone.new(tone)
-    end
+  def analysis_service
+    @analysis_service ||= JSON.parse(post_to_watson.body, symbolize_names: true)
   end
 
   private
@@ -36,13 +35,5 @@ class WatsonService
       req.headers['Content-Type'] = 'text/plain;charset=utf-8'
       req.body = "#{tweets}"
     end
-  end
-
-  def analysis_service
-    @analysis_service ||= JSON.parse(post_to_watson.body, symbolize_names: true)
-  end
-
-  def new_document_analysis
-    @new_document_analysis ||= JSON.parse(post_to_watson(analyzed_tweets).body, symbolize_names: true)
   end
 end

@@ -1,55 +1,36 @@
+<div class="login_form">
 <%= form_for @user do |f| %>
+  <div class="login-content">
+      <h2>Create an Account</h2>
 
-<div class="row">
-  <div class="one-third column">&nbsp;</div>
-  <div class="one-third column">
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+      <div class="input-field">
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+      </div>
+
+      <div class="input-field">
+        <%= f.label :username %>
+        <%= f.text_field :username %>
+      </div>
+
+      <div class="input-field">
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+      </div>
+
+      <div class="input-field">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
+
+      <div class="input-field">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
+      </div>
+
+      <div class="input-field">
+        <%= f.submit 'Register', class: "button"%>
+      </div>
   </div>
-  <div class="one-third column">&nbsp;</div>
-</div>
-
-<div class="row">
-  <div class="one-third column">&nbsp;</div>
-  <div class="one-third column">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-  </div>
-  <div class="one-third column">&nbsp;</div>
-</div>
-
-<div class="row">
-  <div class="one-third column">&nbsp;</div>
-  <div class="one-third column">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-  <div class="one-third column">&nbsp;</div>
-</div>
-
-<div class="row">
-  <div class="one-third column">&nbsp;</div>
-  <div class="one-third column">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-  <div class="one-third column">&nbsp;</div>
-</div>
-
-<div class="row">
-  <div class="one-third column">&nbsp;</div>
-  <div class="one-third column">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div>
-</div>
-
-<div class="row">
-  <div class="one-third column">&nbsp;</div>
-  <div class="one-third column">
-    <%= f.submit 'Register', class: "button-primary"%>
-  </div>
-  <div class="one-third column">&nbsp;</div>
-</div>
-
 <% end %>
+</div>

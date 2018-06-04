@@ -2,27 +2,19 @@ div.welcome-index {
   margin-top: 100px;
 }
 
-button.welcome {
-  background-color: #979AA1;
-  width: 155px;
-  a {
-    color: white;
-    text-decoration: none;
-  }
-}
-
 .register {
   border: 1px solid #888888;
   border-radius: 8px;
+  background-color: white;
   .register-inner {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
 }
 
 .oath-box, .login-box, .current-box {
+  background-color: white;
   border: 1px solid #888888;
   border-radius: 8px;
   height: 300px;

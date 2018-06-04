@@ -1,22 +1,13 @@
-require 'spec_helper'
-require './app/models/tone'
+require 'rails_helper'
 
 describe Tone do
-  it 'initializes with hash as attribute' do
-    text = {score: '1', tone_name: 'Angry', tone_id: 'angry'}
-
-    tone = Tone.new(text)
-    expect(tone.score).to eq(text[:score])
-    expect(tone.name).to eq(text[:tone_name])
-    expect(tone.id).to eq(text[:tone_id])
+  describe 'validations' do
+    it { should validate_presence_of :tone_name }
+    it { should validate_presence_of :url }
   end
 
-  it 'initializes with other attributes' do
-    text = {score: '8', tone_name: 'Happy', tone_id: 'happy'}
-
-    tone = Tone.new(text)
-    expect(tone.score).to eq(text[:score])
-    expect(tone.name).to eq(text[:tone_name])
-    expect(tone.id).to eq(text[:tone_id])
+  describe 'relationships' do
+    it { should have_many :tweet_tones }
+    it { should have_many :tweets }
   end
 end

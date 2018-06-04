@@ -1,3 +1,5 @@
+<%= content_tag "div", id: "tweets", data: {tweets: @document_text} do %>
+<% end %>
 <div class="row main-tweet-page">
 
   <div class="six columns tweet-page">
@@ -5,35 +7,27 @@
       <h2>Tweets</h2>
     </div>
 
-    <div class="ten columns">
+    <div class="ten columns tweet-box">
       <% @analyzer.tweets.each do |tweet| %>
         <div class="twelve columns tweet">
-          <h6><%= link_to tweet.text, "/tweets/#{tweet.id}" %></h6>
+          <%= link_to tweet.text, "/tweets/#{tweet.id}" %>
         </div>
       <% end %>
     </div>
   </div>
 
   <div class="six columns tweet-page">
-    <h2>Tones</h2>
+    <div class="title">
+      <h2>Overall Tones</h2>
+    </div>
 
-    <% if @analyzer.document_tones.empty? %>
+    <div>
+      <ul id="watson_partial">
+      </ul>
+    </div>
 
-      <div class="ten columns tweet">
-        <h4>No tone analyzed in sample, try again.</h4>
-      </div>
-
-    <% else %>
-
-      <% @analyzer.document_tones.each do |document_tone| %>
-        <div class="ten columns tone-name">
-          <ul>
-            <li><%= document_tone.name %></li>
-          </ul>
-        </div>
-      <% end %>
-    <% end %>
-
+    <button type="button" class="get_watson_button">Watson Data</button>
   </div>
 
 </div>
+<%= javascript_include_tag 'tweets' %>

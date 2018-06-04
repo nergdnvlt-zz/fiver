@@ -5,8 +5,8 @@ class TweetService
 
   def return_tweets
     client.search("#{@crypto} -rt", result_type: "recent", lang: "en").take(20).map do |api_tweet|
-      RawTweet.new(api_tweet.text)
-    end
+      api_tweet.text
+    end.join
   end
 
   private

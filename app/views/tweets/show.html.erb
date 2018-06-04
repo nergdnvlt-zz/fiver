@@ -6,7 +6,7 @@
     </div>
 
     <div class="ten columns tweet">
-      <h6><%= @tweet.text %></h6>
+      <p class="text"><%= @tweet.text %></p>
     </div>
 
   </div>
@@ -17,7 +17,11 @@
     </div>
 
     <div class="ten columns tone-name">
-      <%= @tweet.tone_name %>
+      <ul class="tone-list">
+      <% @tweet.tones.each do |tone| %>
+        <li><%= tone.tone_name %>   <%= image_tag tone.url, class: 'tone-icon' %></li>
+      <% end %>
+    </ul>
     </div>
 
   </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_28_171011) do
+ActiveRecord::Schema.define(version: 2018_06_03_164312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -21,11 +21,20 @@ ActiveRecord::Schema.define(version: 2018_05_28_171011) do
     t.string "symbol"
   end
 
+  create_table "tones", force: :cascade do |t|
+    t.string "tone_name"
+    t.string "url"
+  end
+
+  create_table "tweet_tones", force: :cascade do |t|
+    t.bigint "tweet_id"
+    t.bigint "tone_id"
+    t.index ["tone_id"], name: "index_tweet_tones_on_tone_id"
+    t.index ["tweet_id"], name: "index_tweet_tones_on_tweet_id"
+  end
+
   create_table "tweets", force: :cascade do |t|
     t.string "text"
-    t.string "score"
-    t.string "tone_id"
-    t.string "tone_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -41,4 +50,6 @@ ActiveRecord::Schema.define(version: 2018_05_28_171011) do
     t.string "id_token"
   end
 
+  add_foreign_key "tweet_tones", "tones"
+  add_foreign_key "tweet_tones", "tweets"
 end

@@ -9,25 +9,58 @@
   justify-content: center;
   align-items: center;
   margin-top: 100px;
+  background-color: white;
+  height: 250px;
+  a {
+    color: black;
+  }
 }
 
 .tweet {
-  margin-top: 3px;
+  margin-top: 4px;
+  margin-bottom: 25px;
   margin-left: 0px;
+  display: flex;
+  align-items: center;
+  a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 
 .title {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 30px;
 }
 
 .main-tweet-page {
-  h2, h6, h4, li {
+  h2, h4, li {
     margin-left: 4px;
   }
 }
 
 .tweet-body {
   margin-left: 5px;
+}
+
+.tweet-box, .get_watson_button {
+  margin-bottom: 30px;
+}
+
+.tone-list {
+  margin-bottom: 25px;
+}
+
+.tone-icon {
+  width: 20px;
+  height: 15px;
+}
+
+.text {
+  margin-top: 3px;
+  margin-left: 3px;
 }
