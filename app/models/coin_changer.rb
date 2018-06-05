@@ -5,15 +5,15 @@ class CoinChanger
     @parsed_request = parsed_request
   end
 
-  def self.currency_market_change(currency, parsed_request)
-    new(currency, parsed_request).which_coin
-  end
-
   def which_coin
     return bitcoin_change if bitcoin?
     return etherium_change if etherium?
     return ripple_change if ripple?
     return litecoin_change if litecoin?
+  end
+
+  def self.currency_market_change(currency, parsed_request)
+    new(currency, parsed_request).which_coin
   end
 
   private

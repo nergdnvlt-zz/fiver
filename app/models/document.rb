@@ -5,16 +5,9 @@ class Document
     @tones = make_tones
   end
 
-  # def make_tones
-  #   @attrs[:document_tone][:tones].map do |tone|
-  #     { tone_name: tone[:tone_name] }
-  #   end
-  # end
-
   def make_tones
     @attrs[:document_tone][:tones].map do |tone|
-      db_tone = Tone.find_by(tone_name: tone[:tone_name])
-      { tone_name: db_tone.tone_name, tone_url: db_tone.url }
+      { tone_name: tone[:tone_name] }
     end
   end
 
