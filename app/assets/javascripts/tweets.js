@@ -21,7 +21,6 @@ $('.get_watson_button').on('click', function() {
   fetch(wat_url, { method: 'POST',
                    body: data })
   .then(function(response) { return response.json(); })
-  // .then(response => console.log('Success:', response))
   .then(function(tones){ tones.tones.forEach(
     tone => {
       $(`#watson_partial`).append(`<li class="tone-name">${tone.tone_name}</li>`);
@@ -33,11 +32,29 @@ $('.get_market_button').on('click', function() {
     fetch(market_url, { method: 'POST',
                         body: crypto_id })
     .then(function(response) { return response.json(); })
-    // .then(response => console.log('Success:', response))
     .then(function(change){
       $('#market_partial').text(`${change.market_change}`)
     });
 });
 
 
-// tones.tones.forEach(tone => {console.log(tone.tone_name)})
+var els = document.getElementsByClassName('marketChange');
+for (var i = 0; i < els.length; i++) {
+  var cell = els[i];
+  if (cell.textContent < 0) {
+    cell.classList.remove('green')
+  } else {
+    cell.classList.add('green');
+  }
+}
+
+
+
+
+
+
+
+
+
+
+// .then(response => console.log('Success:', response))
