@@ -1,5 +1,6 @@
 class Api::V1::WatsonController < ApplicationController
   skip_before_action :verify_authenticity_token
+  before_action :current_user
 
   def create
     render json: make_doc(request.body.string).as_json

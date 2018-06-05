@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       post '/watson', to: 'watson#create'
+      post '/market', to: 'market#create'
     end
   end
 
