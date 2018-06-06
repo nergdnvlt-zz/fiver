@@ -1,0 +1,86 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2017-09-21
+    body:
+      encoding: UTF-8
+      string: "Are there any functional BTC plugins for WooCommerce that don't use
+        3rd party vendors?Bill Regulating Blockchains Dies In Committee@PaulManafort
+        They weren't after him: there were concerns about some of his investment activities/fun…
+        https://t.co/JlxNdOYLQz$BTC#bitcoin 1hr looking bearish all the way down to
+        soft support at 7200.am happy to follow this project because my project is
+        in line with the thinking and what I want #Crypto… https://t.co/k8rEcMFki1If#Bitcoin
+        is a #Bubble, Final Stage of ‘#Panic’ on the #Horizon https://t.co/Ba7fnXOiPxto
+        open bitcoin exchange in Japan https://t.co/SJ86VkRAYYhttps://t.co/u0n93m0xDL
+        / Bitcoin Token  #Airdrop  \U0001F315\U0001F315\U0001F315\U0001F44F    Join
+        in this Airdrop of 2000 BTK  Europe: Apple Co-Founder Hedges His Bets On Bitcoin
+        https://t.co/X0LtoElKhcTelegram"
+    headers:
+      Authorization:
+      - Basic MGIwYTZmNTYtNjI3NS00YWY4LWI1YzYtNGE2NTc5NDY0MTM3Om5iRVBWQ2pBUzZ3aQ==
+      User-Agent:
+      - Faraday v0.15.2
+      Content-Type:
+      - text/plain;charset=utf-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Backside-Transport:
+      - OK OK
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Content-Type-Options:
+      - nosniff
+      Pragma:
+      - no-cache
+      X-Service-Api-Version:
+      - 3.5.3; 2017-09-21
+      Cache-Control:
+      - no-store
+      X-Service-Build-Number:
+      - '2018-05-14T05:02:51'
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Language:
+      - en-US
+      X-Powered-By:
+      - Servlet/3.1
+      Content-Type:
+      - application/json
+      Server:
+      - "-"
+      X-Dp-Transit-Id:
+      - gateway02-405963109
+      X-Global-Transaction-Id:
+      - ffea405d5b17440118328165
+      Strict-Transport-Security:
+      - max-age=31536000;
+      X-Dp-Watson-Tran-Id:
+      - gateway02-405963109
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Wed, 06 Jun 2018 02:16:33 GMT
+      Content-Length:
+      - '1281'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - Watson-DPAT=82rLRkHklqKjVaongxA7W7pJsHNySUunwkt7FtyAnRiqIJZBVj%2FgiRd6lVTFhdYxCdt%2FtvGfQfAHSonLHMIowqrS5XdqvEavyZ5%2FybbvoKQ4VH%2BiIjfHya5t5BMciu44t%2B97KY38tseS%2FgVHsVlhyr5UANButFAHck8Xmc1Vakz5uASxUs%2BS%2FswB5Nzsp4O5%2FWd70S%2Bp0syxKJJZzNJDwuGH%2Bvxx59pGb3cc4d315j%2FakN4hmJlHGjLkwX65WIzsBGcvQgOS3qoDmLYUsJIcnmeMRbCKfmQ3i5OSvmZrbBhuR%2FQCnDPtfvqczQ%2B5SELxADieDPbKEHFinZloCkq%2FoNzm7L9fTzvk9dPEjny6c2L2%2FSm85VRF0nQU8bkqPBqNFEG7HH9YCMPd9yHTNnV9GiGWL8GV4eoqvKYH%2BjdIpaQfLUuXL6TGJfpUFzLF5ef4u8J7nx%2B%2BeJY5vHKILcnithzvgH%2BN2HWscYnXujYylloTQ2XOu855ax7D7teRQWX0qT0tVXPs3PNsO50H%2FkpFlROzJo3xzJz22JxOA8wmWj4ROArqAAnMtoM5vVp5EN61rxOJ%2FxnUlFdTPL1UTBCEssi4MEmdZcsfuvQmuxC0BJmHe7ASUgrHgzrxqAZdmVILCmhyl03Yqpku4L5EgLkafkH6w%2FeRP2Kl6Pw6xsFVF1p0fv0AJJNKjb0WZ%2F0%2FWQRYKn%2BKUZn3YwM%2BQTBy31u1OhLSH7HWAeR%2BgwxJAbCx3XS%2BWRe8nCtBtPBXT2%2BmMaBhQp6oYKpSZGKADCpaYcoWK6jsh6CgBPL%2BKuNvxDsgCbiUISIij%2F1qbnO5OrEmnGRHlGtqQQMUcrXjNbzruGsCjQQKlQkGTYONMP64VA4QTzSPwI4tmAA0OiW5hqfVPdbVuyLmSm8CdVB5djApLLCFxeGDG5YNg8GTzBsdAoIOPD3XDZSndh07cNOwpNBIk4Go;
+        path=/tone-analyzer/api; secure; HttpOnly
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJkb2N1bWVudF90b25lIjp7InRvbmVzIjpbeyJzY29yZSI6MC44MjYzMzEsInRvbmVfaWQiOiJqb3kiLCJ0b25lX25hbWUiOiJKb3kifSx7InNjb3JlIjowLjYwODY3OCwidG9uZV9pZCI6InRlbnRhdGl2ZSIsInRvbmVfbmFtZSI6IlRlbnRhdGl2ZSJ9XX0sInNlbnRlbmNlc190b25lIjpbeyJzZW50ZW5jZV9pZCI6MCwidGV4dCI6IkFyZSB0aGVyZSBhbnkgZnVuY3Rpb25hbCBCVEMgcGx1Z2lucyBmb3IgV29vQ29tbWVyY2UgdGhhdCBkb24ndCB1c2UgM3JkIHBhcnR5IHZlbmRvcnM/QmlsbCBSZWd1bGF0aW5nIEJsb2NrY2hhaW5zIERpZXMgSW4gQ29tbWl0dGVlQFBhdWxNYW5hZm9ydCBUaGV5IHdlcmVuJ3QgYWZ0ZXIgaGltOiB0aGVyZSB3ZXJlIGNvbmNlcm5zIGFib3V0IHNvbWUgb2YgaGlzIGludmVzdG1lbnQgYWN0aXZpdGllcy9mdW7igKYgaHR0cHM6Ly90LmNvL0pseE5kT1lMUXokQlRDI2JpdGNvaW4iLCJ0b25lcyI6W3sic2NvcmUiOjAuNTM5MjM1LCJ0b25lX2lkIjoidGVudGF0aXZlIiwidG9uZV9uYW1lIjoiVGVudGF0aXZlIn1dfSx7InNlbnRlbmNlX2lkIjoxLCJ0ZXh0IjoiMWhyIGxvb2tpbmcgYmVhcmlzaCBhbGwgdGhlIHdheSBkb3duIHRvIHNvZnQgc3VwcG9ydCBhdCA3MjAwLmFtIGhhcHB5IHRvIGZvbGxvdyB0aGlzIHByb2plY3QgYmVjYXVzZSBteSBwcm9qZWN0IGlzIGluIGxpbmUgd2l0aCB0aGUgdGhpbmtpbmcgYW5kIHdoYXQgSSB3YW50ICNDcnlwdG/igKYgaHR0cHM6Ly90LmNvL2s4ckVjTUZraTFJZiNCaXRjb2luIGlzIGEgI0J1YmJsZSwgRmluYWwgU3RhZ2Ugb2Yg4oCYI1Bhbmlj4oCZIG9uIHRoZSAjSG9yaXpvbiBodHRwczovL3QuY28vQmE3Zm5YT2lQeHRvIiwidG9uZXMiOlt7InNjb3JlIjowLjY0Njg5NSwidG9uZV9pZCI6ImpveSIsInRvbmVfbmFtZSI6IkpveSJ9XX0seyJzZW50ZW5jZV9pZCI6MiwidGV4dCI6Im9wZW4gYml0Y29pbiBleGNoYW5nZSBpbiBKYXBhbiBodHRwczovL3QuY28vU0o4NlZrUkFZWWh0dHBzOi8vdC5jby91MG45M20weERMIC8gQml0Y29pbiBUb2tlbiAgI0FpcmRyb3AgIFx1RDgzQ1x1REYxNVx1RDgzQ1x1REYxNVx1RDgzQ1x1REYxNVx1RDgzRFx1REM0RiAgICBKb2luIGluIHRoaXMgQWlyZHJvcCBvZiAyMDAwIEJUSyAgRXVyb3BlOiBBcHBsZSBDby1Gb3VuZGVyIEhlZGdlcyBIaXMgQmV0cyBPbiBCaXRjb2luIGh0dHBzOi8vdC5jby9YMEx0b0VsS2hjVGVsZWdyYW0iLCJ0b25lcyI6W3sic2NvcmUiOjAuNTcxMzU4LCJ0b25lX2lkIjoiam95IiwidG9uZV9uYW1lIjoiSm95In1dfV19
+    http_version: 
+  recorded_at: Wed, 06 Jun 2018 02:16:34 GMT
+recorded_with: VCR 4.0.0
