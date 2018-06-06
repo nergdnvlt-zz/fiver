@@ -13,6 +13,8 @@ I built this project to push my boundaries in a number of areas. It was the firs
 
 For the future I'd like to refactor this into solely backend API endpoints and have a seperate APP that consumes those endpoints. I would also like to build rake tasks to run at certain times and then push the data to a service like Redis in order to speed up the API calls.
 
+![screenshot](screenshot.png)
+
 ### Table Of Contents
 - [Versions/Prerequisites](#versions-prerequisites)
 - [Setup](#setup)
