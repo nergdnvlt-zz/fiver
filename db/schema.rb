@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_03_164312) do
+ActiveRecord::Schema.define(version: 2018_06_06_151505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -23,21 +23,17 @@ ActiveRecord::Schema.define(version: 2018_06_03_164312) do
 
   create_table "tones", force: :cascade do |t|
     t.string "tone_name"
-    t.string "url"
     t.index ["tone_name"], name: "index_tones_on_tone_name"
-  end
-
-  create_table "tweet_tones", force: :cascade do |t|
-    t.bigint "tweet_id"
-    t.bigint "tone_id"
-    t.index ["tone_id"], name: "index_tweet_tones_on_tone_id"
-    t.index ["tweet_id"], name: "index_tweet_tones_on_tweet_id"
   end
 
   create_table "tweets", force: :cascade do |t|
     t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "crypto_id"
+    t.bigint "tone_id"
+    t.index ["crypto_id"], name: "index_tweets_on_crypto_id"
+    t.index ["tone_id"], name: "index_tweets_on_tone_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,6 +47,6 @@ ActiveRecord::Schema.define(version: 2018_06_03_164312) do
     t.string "id_token"
   end
 
-  add_foreign_key "tweet_tones", "tones"
-  add_foreign_key "tweet_tones", "tweets"
+  add_foreign_key "tweets", "cryptos"
+  add_foreign_key "tweets", "tones"
 end

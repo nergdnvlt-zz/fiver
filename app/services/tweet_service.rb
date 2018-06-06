@@ -4,7 +4,7 @@ class TweetService
   end
 
   def return_tweets
-    client.search("#{@crypto} -rt", result_type: "recent", lang: "en").take(50).map do |api_tweet|
+    client.search("#{@crypto} -rt", result_type: "recent", lang: "en").take(100).map do |api_tweet|
       api_tweet.text
     end.join
   end

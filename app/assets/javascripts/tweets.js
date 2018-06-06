@@ -1,5 +1,3 @@
-var data = $('#tweets').data('tweets');
-
 var wat_url = `/api/v1/watson`;
 var market_url = `/api/v1/market`;
 
@@ -19,7 +17,7 @@ var crypto_id = $.urlParam('crypto_id');
 $('.get_watson_button').on('click', function() {
   $(this).hide();
   fetch(wat_url, { method: 'POST',
-                   body: data })
+                   body: crypto_id })
   .then(function(response) { return response.json(); })
   .then(function(tones){ tones.tones.forEach(
     tone => {

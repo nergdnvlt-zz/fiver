@@ -1,16 +1,14 @@
 class TweetPresenter
-  attr_reader :tweets, :document_text
-  def initialize(crypto_name)
-    @crypto_name = crypto_name
-    @analyzer ||= TweetAnalyzer.new(@crypto_name)
+  def initialize(crypto_id)
+    @crypto_id = crypto_id
     @tweets = tweets
   end
 
   def tweets
-    @tweets = @analyzer.tweets
+    @tweets = Crypto.find(@crypto_id).tweets.order("RANDOM()").limit(10)
   end
 
-  def document_text
-    @document_text = @analyzer.joined_tweets
-  end
+  # def document_text
+  #   @document_text = @tweets.pluck(:text).join
+  # end
 end
