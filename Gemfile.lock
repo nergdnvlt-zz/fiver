@@ -229,6 +229,10 @@ GEM
     shoulda-matchers (3.1.2)
       activesupport (>= 4.0.0)
     simple_oauth (0.3.1)
+    skylight (2.0.2)
+      skylight-core (= 2.0.2)
+    skylight-core (2.0.2)
+      activesupport (>= 4.2.0)
     sprockets (3.7.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -300,6 +304,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 5.0)
   shoulda-matchers
+  skylight
   twitter
   tzinfo-data
   uglifier (>= 1.3.0)

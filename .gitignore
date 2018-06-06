@@ -27,6 +27,7 @@
 
 # Ignore application configuration
 /config/application.yml
+/config/skylight.yml
 
 # Ignore omniauth file
 /config/initializers/twitter.rb
