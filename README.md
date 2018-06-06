@@ -18,7 +18,6 @@ For the future I'd like to refactor this into solely backend API endpoints and h
 ### Table Of Contents
 - [Versions/Prerequisites](#versions-prerequisites)
 - [Setup](#setup)
-- [Database](#database)
 - [The Test Suite](#the-test-suite)
 - [Spinning Up A Server](#spinning-up-a-server)
 - [Authors](#authors)
