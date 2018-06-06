@@ -31,3 +31,6 @@
 
 # Ignore omniauth file
 /config/initializers/twitter.rb
+
+#Ignore cassettes
+/spec/cassettes/*
