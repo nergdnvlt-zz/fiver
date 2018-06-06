@@ -3,18 +3,10 @@ class Api::V1::MarketController < ApplicationController
   before_action :set_symbol
 
   def create
-    render json: market_response.as_json
+    render json: MarketResponse.as_json(@symbol)
   end
 
   private
-
-  def service_call
-    MarketService.new(@symbol).market
-  end
-
-  def market_response
-    MarketResponse.new(service_call)
-  end
 
   def set_symbol
     @symbol = Crypto.find(request.body.string.to_i).symbol
