@@ -15,7 +15,7 @@ describe Document do
     @crypto.tweets.create!(text: 'fluffy', tone: tone)
     @crypto.tweets.create!(text: 'dynamic', tone: tone)
   end
-  
+
   describe 'class methods' do
     it '#as_json' do
       tones = Document.as_json(@crypto.id)

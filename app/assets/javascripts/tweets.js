@@ -32,19 +32,10 @@ $('.get_market_button').on('click', function() {
     .then(function(response) { return response.json(); })
     .then(function(change){
       $('#market_partial').text(`${change.market_change}`)
+      $("#market_partial:contains('-')").addClass('red');
+      $("#market_partial:contains('+')").addClass('green')
     });
 });
-
-
-var els = document.getElementsByClassName('marketChange');
-for (var i = 0; i < els.length; i++) {
-  var cell = els[i];
-  if (cell.textContent < 0) {
-    cell.classList.remove('green')
-  } else {
-    cell.classList.add('green');
-  }
-}
 
 
 

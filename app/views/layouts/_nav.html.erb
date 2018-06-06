@@ -11,9 +11,15 @@
       <% end %>
       </div>
 
+    <% if current_user %>
+    <div class="title-main-nav">
+      <%= link_to image_tag(asset_path('icon.png')), user_path(current_user.slug) %>
+    </div>
+    <% else %>
     <div class="title-main-nav">
       <%= image_tag(asset_path('icon.png')) %>
     </div>
+    <% end %>
 
       <div class="signout-nav">
         <% if current_user %>
