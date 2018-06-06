@@ -7,10 +7,9 @@ class Tweet < ApplicationRecord
 
   def parse_text
     words = self.text.split
-    words.each do |word|
-      word.gsub!('http', ' ') if word.include?('http')
-      word.gsub!('https', ' ') if word.include?('https')
-    end.join(' ')
+    words.map do |word|
+      word if word.exclude?('http')
+    end.compact.join(' ')
   end
 
   def save_text
