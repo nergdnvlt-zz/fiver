@@ -18,9 +18,7 @@
 
     <div class="ten columns tone-name">
       <ul class="tone-list">
-      <% @tweet.tones.each do |tone| %>
-        <li><%= tone.tone_name %>   <%= image_tag tone.url, class: 'tone-icon' %></li>
-      <% end %>
+      <li><%= @tweet.tone.tone_name %></li>
     </ul>
     </div>
 
