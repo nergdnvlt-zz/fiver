@@ -3,19 +3,8 @@ class WatsonService
     @raw_tweets = raw_tweets
   end
 
-  def analyzed_tweets
-    tweets = analysis_service[:sentences_tone].map do |sentence|
-      next if sentence[:tones].empty?
-      next if sentence[:tones][0][:tone_name] == 'Analytical'
-      tone = Tone.find_by(tone_name: sentence[:tones][0][:tone_name])
-      tweet = Tweet.create({ text: sentence[:text] })
-      tweet.tweet_tones.create(tone: tone)
-      tweet
-    end.compact
-  end
-
   def analysis_service
-    @analysis_service ||= JSON.parse(post_to_watson.body, symbolize_names: true)
+    JSON.parse(post_to_watson.body, symbolize_names: true)
   end
 
   private

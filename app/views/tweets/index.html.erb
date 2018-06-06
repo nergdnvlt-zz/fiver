@@ -1,4 +1,4 @@
-<%= content_tag "div", id: "tweets", data: {tweets: @document_text} do %>
+<%= content_tag "div", id: "tweets", data: {tweets: @tweets.document_text} do %>
 <% end %>
 
 <div class="row main-tweet-page">
@@ -9,7 +9,7 @@
     </div>
 
     <div class="ten columns tweet-box">
-      <% @analyzer.tweets.each do |tweet| %>
+      <% @tweets.tweets.each do |tweet| %>
         <div class="twelve columns tweet">
           <%= link_to tweet.text, "/tweets/#{tweet.id}" %>
         </div>

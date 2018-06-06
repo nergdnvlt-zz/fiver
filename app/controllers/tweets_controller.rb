@@ -1,11 +1,17 @@
 class TweetsController < ApplicationController
+  before_action :set_crypto_name, only: [:index]
+
   def index
-    @crypto_name = Crypto.find(params[:crypto_id]).name
-    @analyzer = AnalyzerPresenter.new(@crypto_name)
-    @document_text = @analyzer.joined_tweets
+    @tweets = TweetPresenter.new(@crypto)
   end
 
   def show
     @tweet = Tweet.find(params[:id])
+  end
+
+  private
+
+  def set_crypto_name
+    @crypto = Crypto.find(params[:crypto_id]).name
   end
 end
