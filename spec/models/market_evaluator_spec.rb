@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe CoinChanger do
+describe MarketEvaluator do
   let(:parsed_request) { { :status=>"success",
                            :data=>
                             {:stats=>{:total=>3322},
@@ -285,36 +285,32 @@ describe CoinChanger do
   it 'returns info for BTC' do
     crypto = 'BTC'
 
-    @market_data = CoinChanger.currency_market_change(crypto, parsed_request)
-
-    expect(@market_data).to be_a Float
-    expect(@market_data).to eq(1.24)
+    @market_data = MarketEvaluator.currency_market_change(crypto, parsed_request)
+    
+    expect(@market_data).to eq('+1.24')
   end
 
   it 'returns info for ETH' do
     crypto = 'ETH'
 
-    @market_data = CoinChanger.currency_market_change(crypto, parsed_request)
+    @market_data = MarketEvaluator.currency_market_change(crypto, parsed_request)
 
-    expect(@market_data).to be_a Float
-    expect(@market_data).to eq(1.92)
+    expect(@market_data).to eq('+1.92')
   end
 
   it 'returns info for XRP' do
     crypto = 'XRP'
 
-    @market_data = CoinChanger.currency_market_change(crypto, parsed_request)
+    @market_data = MarketEvaluator.currency_market_change(crypto, parsed_request)
 
-    expect(@market_data).to be_a Float
-    expect(@market_data).to eq(1.27)
+    expect(@market_data).to eq('+1.27')
   end
 
   it 'returns info for LTC' do
     crypto = 'LTC'
 
-    @market_data = CoinChanger.currency_market_change(crypto, parsed_request)
+    @market_data = MarketEvaluator.currency_market_change(crypto, parsed_request)
 
-    expect(@market_data).to be_a Float
-    expect(@market_data).to eq(0.89)
+    expect(@market_data).to eq('+0.89')
   end
 end

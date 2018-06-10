@@ -8,15 +8,21 @@ class TweetAnalyzer
   end
 
   def analyzed_tweets
-    tweet_response[:sentences_tone].map do |sentence|
-      next if sentence[:tones].empty?
-      next if sentence[:tones][0][:tone_name] == 'Analytical'
+    a = remove_analytical.map do |sentence|
       tone = Tone.find_by(tone_name: sentence[:tones][0][:tone_name])
       Tweet.create({ text: sentence[:text], crypto_id: @crypto_id, tone_id: tone.id })
-    end.compact
+    end
   end
 
   private
+
+  def remove_nil
+    tweet_response[:sentences_tone].delete_if { |sentence| sentence[:tones].empty? }
+  end
+
+  def remove_analytical
+    remove_nil.delete_if { |sentence| sentence[:tones][0][:tone_name] == 'Analytical' }
+  end
 
   def tweet_response
     @tweets ||= WatsonService.new(@raw_tweets).analysis_service

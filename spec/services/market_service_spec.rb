@@ -1,47 +1,25 @@
 require 'rails_helper'
 
-describe TweetService do
-  it 'returns a list of tweets' do
+describe MarketService do
+  it 'returns a market data' do
     VCR.use_cassette('/services/market_service-bitcoin') do
-      crypto = 'BTC'
+      @market_data = MarketService.request
 
-      @market_data = MarketService.new(crypto).market
-
-      expect(@market_data).to be_a Float
-      expect(@market_data).to eq(1.24)
+      expect(@market_data).to be_a Hash
+      expect(@market_data[:status]).to eq('success')
+      expect(@market_data[:data][:coins][0][:symbol]).to eq('BTC')
+      expect(@market_data[:data][:coins][0][:change]).to eq(1.24)
     end
   end
 
-  it 'returns a list of tweets' do
-    VCR.use_cassette('/services/market_service-etherium') do
-      crypto = 'ETH'
+  it 'also returns market data' do
+    VCR.use_cassette('/services/market_service-instance-bitcoin') do
+      @market_data = MarketService.new.parsed_request
 
-      @market_data = MarketService.new(crypto).market
-
-      expect(@market_data).to be_a Float
-      expect(@market_data).to eq(1.92)
-    end
-  end
-
-  it 'returns a list of tweets' do
-    VCR.use_cassette('/services/market_service-XRP') do
-      crypto = 'XRP'
-
-      @market_data = MarketService.new(crypto).market
-
-      expect(@market_data).to be_a Float
-      expect(@market_data).to eq(1.27)
-    end
-  end
-
-  it 'returns a list of tweets' do
-    VCR.use_cassette('/services/market_service-LTC') do
-      crypto = 'LTC'
-
-      @market_data = MarketService.new(crypto).market
-
-      expect(@market_data).to be_a Float
-      expect(@market_data).to eq(0.89)
+      expect(@market_data).to be_a Hash
+      expect(@market_data[:status]).to eq('success')
+      expect(@market_data[:data][:coins][0][:symbol]).to eq('BTC')
+      expect(@market_data[:data][:coins][0][:change]).to eq(1.38)
     end
   end
 end

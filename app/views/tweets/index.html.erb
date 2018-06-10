@@ -6,7 +6,7 @@
     </div>
 
     <div class="ten columns tweet-box">
-      <% @tweets.tweets.each do |tweet| %>
+      <% @tweets.each do |tweet| %>
         <div class="twelve columns tweet">
           <%= link_to tweet.text, "/tweets/#{tweet.id}" %>
         </div>

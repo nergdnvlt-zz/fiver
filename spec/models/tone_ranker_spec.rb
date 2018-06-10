@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Document do
+describe ToneRanker do
   before(:each) do
     tone = Tone.create!(tone_name: 'Anger')
     @crypto = Crypto.create!(name: 'Bitcoin', symbol: 'BTC')
@@ -18,7 +18,7 @@ describe Document do
 
   describe 'class methods' do
     it '#as_json' do
-      tones = Document.as_json(@crypto.id)
+      tones = ToneRanker.as_json(@crypto.id)
 
       expect(tones).to be_a Hash
       expect(tones.keys).to eq([:tones])
@@ -30,7 +30,7 @@ describe Document do
 
   describe 'instance methods' do
     it 'constructs json' do
-      tones = Document.new(@crypto.id).as_json
+      tones = ToneRanker.new(@crypto.id).as_json
 
       expect(tones).to be_a Hash
       expect(tones.keys).to eq([:tones])

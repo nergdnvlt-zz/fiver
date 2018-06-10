@@ -18,6 +18,15 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-every 1.hours do
-  rake "import:BTC"
+every :hour do
+  rake "import:all"
+  sleep 10
+  rake "import:all"
+end
+
+every 3.hours do
+  rake 'clear:all'
+  rake 'import:all'
+  sleep 10
+  rake 'import:all'
 end

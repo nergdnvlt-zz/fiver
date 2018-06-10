@@ -1,15 +1,24 @@
 .user-show {
   margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .input-box {
   border: 1px solid #888888;
   border-radius: 8px;
   background-color: white;
+  color: black;
+  opacity: 0.80;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.input-box:hover {
+    opacity: 1.0;
+  }
 
 .crypto-dropdown {
   margin-top: 30px;

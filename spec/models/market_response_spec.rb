@@ -7,8 +7,7 @@ describe MarketService do
         market = MarketResponse.as_json('BTC')
 
         expect(market).to be_a Hash
-        expect(market[:market_change]).to be_a Float
-        expect(market[:market_change]).to eq(1.43)
+        expect(market[:market_change]).to eq('+1.43')
       end
     end
 
@@ -17,8 +16,7 @@ describe MarketService do
         market = MarketResponse.as_json('ETH')
 
         expect(market).to be_a Hash
-        expect(market[:market_change]).to be_a Float
-        expect(market[:market_change]).to eq(1.79)
+        expect(market[:market_change]).to eq('+1.79')
       end
     end
   end
@@ -30,8 +28,7 @@ describe MarketService do
         market_response = market.as_json
 
         expect(market_response).to be_a Hash
-        expect(market_response[:market_change]).to be_a Float
-        expect(market_response[:market_change]).to eq(1.45)
+        expect(market_response[:market_change]).to eq('+1.45')
       end
     end
 
@@ -41,8 +38,7 @@ describe MarketService do
         market_response = market.as_json
 
         expect(market_response).to be_a Hash
-        expect(market_response[:market_change]).to be_a Float
-        expect(market_response[:market_change]).to eq(1.73)
+        expect(market_response[:market_change]).to eq('+1.73')
       end
     end
   end
