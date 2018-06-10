@@ -5,11 +5,14 @@ class Tweet < ApplicationRecord
   belongs_to :tone
   belongs_to :crypto
 
+  private
+
   def parse_text
-    words = self.text.split
-    words.map do |word|
-      word if word.exclude?('http')
-    end.compact.join(' ')
+    split_text.delete_if { |word| word.include?('http') }.join(' ')
+  end
+
+  def split_text
+    text.split
   end
 
   def save_text

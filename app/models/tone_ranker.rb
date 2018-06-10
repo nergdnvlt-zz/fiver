@@ -1,6 +1,4 @@
-class Document
-  attr_reader :tones
-
+class ToneRanker
   def self.as_json(crypto_id)
     new(crypto_id).as_json
   end

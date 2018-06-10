@@ -1,8 +1,23 @@
-class CoinChanger
+# Takes currency sym and market data to find change for that currency
+class MarketEvaluator
+  def formatted_change
+    return "+#{which_coin}" if pos_change?
+    which_coin
+  end
+
+  def self.currency_market_change(currency, parsed_request)
+    new(currency, parsed_request).formatted_change
+  end
+
+  private
 
   def initialize(currency, parsed_request)
     @currency = currency
     @parsed_request = parsed_request
+  end
+
+  def pos_change?
+    which_coin.to_s.exclude?('-')
   end
 
   def which_coin
@@ -11,12 +26,6 @@ class CoinChanger
     return ripple_change if ripple?
     return litecoin_change if litecoin?
   end
-
-  def self.currency_market_change(currency, parsed_request)
-    new(currency, parsed_request).which_coin
-  end
-
-  private
 
   def bitcoin?
     @currency == 'BTC'

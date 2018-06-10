@@ -3,6 +3,18 @@
   border-radius: 8px;
 }
 
+.tweet-page-index, .tweet-page, .tweet-page-market {
+  opacity: 0.80;
+}
+
+.tweet-page-index:hover, .tweet-page:hover, .tweet-page-market:hover {
+    opacity: 1.0;
+}
+
+.tweet {
+  opacity: 1.0;
+}
+
 .tweet-page {
   display: flex;
   flex-direction: column;

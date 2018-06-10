@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
   before_action :require_login
 
   def index
-    @tweets = TweetPresenter.new(params[:crypto_id])
+    @tweets = Crypto.find(params[:crypto_id]).tweets.order("RANDOM()").limit(10)
   end
 
   def show

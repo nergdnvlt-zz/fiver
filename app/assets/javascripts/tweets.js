@@ -33,7 +33,7 @@ $('.get_market_button').on('click', function() {
     .then(function(change){
       $('#market_partial').text(`${change.market_change}`)
       $("#market_partial:contains('-')").addClass('red');
-      $("#market_partial:contains('+')").addClass('green')
+      $("#market_partial:contains('+')").addClass('green');
     });
 });
 

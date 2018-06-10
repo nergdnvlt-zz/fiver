@@ -1,10 +1,6 @@
 class MarketService
-  def initialize(coin)
-    @symbol = coin
-  end
-
-  def market
-    @market ||= CoinChanger.currency_market_change(@symbol, parsed_request)
+  def self.request
+    new.parsed_request
   end
 
   def parsed_request
