@@ -3,6 +3,7 @@
   <div class="background-img">
   </div>
 
+  <%= cache current_user do %>
   <!-- Navigation Bar -->
   <nav class="fixed-nav-bar">
     <div class="home-nav">
@@ -27,5 +28,6 @@
         <% end %>
       </div>
   </nav>
+  <% end %>
 
 </header>
